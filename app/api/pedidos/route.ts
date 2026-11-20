@@ -32,7 +32,7 @@ const products = {
   },
   'empanadas-caseras': {
     name: 'Empanadas caseras',
-    priceCentavos: 4500000,
+    priceCentavos: 450000,
   },
   'patacon-con-todo': {
     name: 'Patacón con todo',
