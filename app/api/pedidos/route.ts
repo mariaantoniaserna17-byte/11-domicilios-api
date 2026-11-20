@@ -22,6 +22,30 @@ const products = {
     name: 'Limonada natural',
     priceCentavos: 900000,
   },
+  'sample-tacos': {
+    name: 'Tacos mexicanos',
+    priceCentavos: 2000000,
+  },
+  'bandeja-paisa-miniatura': {
+    name: 'Bandeja paisa miniatura',
+    priceCentavos: 2200000,
+  },
+  'empanadas-caseras': {
+    name: 'Empanadas caseras',
+    priceCentavos: 4500000,
+  },
+  'patacon-con-todo': {
+    name: 'Patacón con todo',
+    priceCentavos: 1600000,
+  },
+  'jugo-lulo-leche': {
+    name: 'Jugo de lulo en leche',
+    priceCentavos: 600000,
+  },
+  'salchipapa-artesanal': {
+    name: 'Salchipapa artesanal',
+    priceCentavos: 1200000,
+  },
 } as const;
 
 const createOrderSchema = z.object({
@@ -32,7 +56,17 @@ const createOrderSchema = z.object({
   items: z
     .array(
       z.object({
-        productoId: z.enum(['sample-burger', 'sample-pizza', 'sample-lemonade']),
+        productoId: z.enum([
+          'sample-burger',
+          'sample-pizza',
+          'sample-lemonade',
+          'sample-tacos',
+          'bandeja-paisa-miniatura',
+          'empanadas-caseras',
+          'patacon-con-todo',
+          'jugo-lulo-leche',
+          'salchipapa-artesanal',
+        ]),
         cantidad: z.number().int().min(1).max(20),
       }),
     )
